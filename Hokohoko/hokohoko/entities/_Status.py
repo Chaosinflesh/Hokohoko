@@ -1,4 +1,4 @@
-#   hokohoko/entities/__init__.py
+#   hokohoko/entities/_Status.py
 #
 #   Copyright 2020 Neil Bradley, Bebecom NZ Limited
 #
@@ -19,29 +19,34 @@
 #
 #   ====================================================================
 #
-#   This file maps the entities into hokohoko.entities.
+#   Contains the definition of Hokohoko's Status object.
 #
 
-__all__ = [
-    "Account",
-    "Assessor",
-    "Bar",
-    "Config",
-    "Data",
-    "Direction",
-    "Order",
-    "Position",
-    "Predictor",
-    "Status"
-]
+from enum import Enum
 
-from hokohoko.entities._Account import Account
-from hokohoko.entities._Assessor import Assessor
-from hokohoko.entities._Bar import Bar
-from hokohoko.entities._Config import Config
-from hokohoko.entities._Data import Data
-from hokohoko.entities._Direction import Direction
-from hokohoko.entities._Order import Order
-from hokohoko.entities._Position import Position
-from hokohoko.entities._Predictor import Predictor
-from hokohoko.entities._Status import Status
+
+class Status(Enum):
+    """
+    Indicates the outcome for the given Order/Position.
+
+    """
+    #: The Position is awaiting activation (still an Order).
+    PENDING = 0
+
+    #: The Position is open (active).
+    OPEN = 1
+
+    #: The Position was closed either manually or automatically.
+    CLOSED = 2
+
+    #: The Position closed when its ``take_profit`` condition was met.
+    CLOSED_TAKE_PROFIT = 3
+
+    #: The Position closed when its ``stop_loss`` condition was met.
+    CLOSED_STOP_LOSS = 4
+
+    #: The Order was deliberately not taken in Benchmark mode.
+    NOT_TAKEN = 5
+
+    def __repr__(self):
+        return self.name

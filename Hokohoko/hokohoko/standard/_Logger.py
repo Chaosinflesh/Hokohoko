@@ -1,4 +1,4 @@
-#   hokohoko/entities/__init__.py
+#   hokohoko/__init__.py
 #
 #   Copyright 2020 Neil Bradley, Bebecom NZ Limited
 #
@@ -19,29 +19,21 @@
 #
 #   ====================================================================
 #
-#   This file maps the entities into hokohoko.entities.
+#   Logs the output of Positions in a readable format, along with
+#   running balance and equity totals.
 #
 
-__all__ = [
-    "Account",
-    "Assessor",
-    "Bar",
-    "Config",
-    "Data",
-    "Direction",
-    "Order",
-    "Position",
-    "Predictor",
-    "Status"
-]
+from typing import Iterable
 
-from hokohoko.entities._Account import Account
-from hokohoko.entities._Assessor import Assessor
-from hokohoko.entities._Bar import Bar
-from hokohoko.entities._Config import Config
-from hokohoko.entities._Data import Data
-from hokohoko.entities._Direction import Direction
-from hokohoko.entities._Order import Order
-from hokohoko.entities._Position import Position
-from hokohoko.entities._Predictor import Predictor
-from hokohoko.entities._Status import Status
+import numpy as np
+
+from hokohoko.entities import Assessor
+
+
+class Logger(Assessor):
+
+    def analyse(self, data: Iterable) -> None:
+        # TODO: Make this ouptut per-Order rather than total equity.
+        results = np.array([a.get()[1].equity[-1] for a in data], dtype=np.float64)
+        for i, r in enumerate(results):
+            print(f"{i:03d}:{r:12.2f}")

@@ -19,9 +19,16 @@
 #
 #   ====================================================================
 #
-#   Contains a standard Data source, Predictor and Assessor. Does
+#   Contains a standard Data source, Predictor and Assessor. These do
 #   nothing except load the data and cycle through it.
 #
 
 __all__ = [
+    "DoNothing",
+    "Logger",
+    "Npz"
 ]
+
+from hokohoko.standard._DoNothing import DoNothing
+from hokohoko.standard._Logger import Logger
+from hokohoko.standard._Npz import Npz

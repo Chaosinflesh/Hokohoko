@@ -1,4 +1,4 @@
-#   hokohoko/entities/__init__.py
+#   hokohoko/entities/_Direction.py
 #
 #   Copyright 2020 Neil Bradley, Bebecom NZ Limited
 #
@@ -19,29 +19,28 @@
 #
 #   ====================================================================
 #
-#   This file maps the entities into hokohoko.entities.
+#   Contains the definition of Hokohoko's Direction object.
 #
 
-__all__ = [
-    "Account",
-    "Assessor",
-    "Bar",
-    "Config",
-    "Data",
-    "Direction",
-    "Order",
-    "Position",
-    "Predictor",
-    "Status"
-]
+from enum import Enum
 
-from hokohoko.entities._Account import Account
-from hokohoko.entities._Assessor import Assessor
-from hokohoko.entities._Bar import Bar
-from hokohoko.entities._Config import Config
-from hokohoko.entities._Data import Data
-from hokohoko.entities._Direction import Direction
-from hokohoko.entities._Order import Order
-from hokohoko.entities._Position import Position
-from hokohoko.entities._Predictor import Predictor
-from hokohoko.entities._Status import Status
+
+class Direction(Enum):
+    """
+    Specifies the requested trade direction when placing an Order.
+
+    """
+
+    #: Specifies a buy trade (exchange rate expected to increase).
+    BUY = 0
+
+    #: Specified a sell trade (exchange rate expected to decrease).
+    SELL = 1
+
+    #: Lets the benchmark know not buying this symbol is deliberate.
+    #: Auto-generated in the absence of an appropriate ``BUY``.
+    DONT_BUY = 2
+
+    #: Lets the benchmark know not selling this symbol is deliberate.
+    #: Auto-generated in the absence of an appropriate ``SELL``.
+    DONT_SELL = 3
