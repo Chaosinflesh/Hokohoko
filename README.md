@@ -1,5 +1,8 @@
 # Hokohoko Repository
 
+_Hokohoko means "to trade, barter, exchange, sell, buy, export, alternate" in
+Te Reo Maori._[1]
+
 Hokohoko aims to provide an consistent benchmark for academics and others who
 wish to test the efficacy of their algorithms on FOREX speculation.
 
@@ -15,9 +18,8 @@ Hokohoko:
 * hokohoko_assessors
 * hokohoko_predictors
 
-**About the name, Hokohoko**
+<hr>
 
-_Hokohoko means "to trade, barter, exchange, sell, buy, export, alternate" in
-Te Reo Maori. The name was determined in conjunction with Associate Professor
+[1] The name was determined in conjunction with Associate Professor
 Te Taka Keegan, Associate Dean Māori of Wananga Putaiao, Te Wananga o Waikato
-(Division of Health, Engineering, Computing and Science, University of Waikato)._
+(Division of Health, Engineering, Computing and Science, University of Waikato).
