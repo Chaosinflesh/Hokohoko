@@ -15,13 +15,9 @@ Hokohoko:
 * hokohoko_assessors
 * hokohoko_predictors
 
-<div class="panel panel-success">
 **About the name, Hokohoko**
-{: .panel-heading}
-<div class="panel-body">
-Hokohoko means "to trade, barter, exchange, sell, buy, export, alternate" in
+
+_Hokohoko means "to trade, barter, exchange, sell, buy, export, alternate" in
 Te Reo Maori. The name was determined in conjunction with Associate Professor
 Te Taka Keegan, Associate Dean Māori of Wananga Putaiao, Te Wananga o Waikato
-(Division of Health, Engineering, Computing and Science, University of Waikato).
-</div>
-</div>
+(Division of Health, Engineering, Computing and Science, University of Waikato)._
