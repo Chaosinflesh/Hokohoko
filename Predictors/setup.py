@@ -33,7 +33,7 @@ with open("VERSION", "r") as fv:
 	version = fv.read().strip() + f"_{int(datetime.datetime.utcnow().timestamp())}"
 
 setuptools.setup(
-	name="hokohoko_predictors_nc_bradley",
+	name="hokohoko_predictors",
 	version=version,
 	author="Neil Bradley",
 	author_email="neil.bradley@bebecom.co.nz",

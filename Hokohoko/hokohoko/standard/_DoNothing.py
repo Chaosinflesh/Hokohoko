@@ -1,4 +1,4 @@
-#   hokohoko/entities/__init__.py
+#   hokohoko/standard/_DoNothing.py
 #
 #   Copyright 2020 Neil Bradley, Bebecom NZ Limited
 #
@@ -19,29 +19,31 @@
 #
 #   ====================================================================
 #
-#   This file maps the entities into hokohoko.entities.
+#   This is a dummy predictor, which makes no predictions.
 #
 
-__all__ = [
-    "Account",
-    "Assessor",
-    "Bar",
-    "Config",
-    "Data",
-    "Direction",
-    "Order",
-    "Position",
-    "Predictor",
-    "Status"
-]
+from typing import Iterable
 
-from hokohoko.entities._Account import Account
-from hokohoko.entities._Assessor import Assessor
-from hokohoko.entities._Bar import Bar
-from hokohoko.entities._Config import Config
-from hokohoko.entities._Data import Data
-from hokohoko.entities._Direction import Direction
-from hokohoko.entities._Order import Order
-from hokohoko.entities._Position import Position
-from hokohoko.entities._Predictor import Predictor
-from hokohoko.entities._Status import Status
+from hokohoko.entities import Bar, Predictor
+
+
+class DoNothing(Predictor):
+    """
+    This Predictor does nothing at all, which causes Hokohoko to
+    generate a lot of DONT_BUY, DONT_SELL Orders.
+    """
+
+    def __enter__(self) -> Predictor:
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        pass
+
+    def on_start(self, bars: Iterable[Bar]) -> None:
+        pass
+
+    def on_bar(self, bars: Iterable[Bar]) -> None:
+        pass
+
+    def on_stop(self) -> None:
+        pass

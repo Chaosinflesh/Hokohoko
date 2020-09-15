@@ -1,4 +1,4 @@
-#   hokohoko/entities/__init__.py
+#   run_example.sh
 #
 #   Copyright 2020 Neil Bradley, Bebecom NZ Limited
 #
@@ -19,29 +19,8 @@
 #
 #   ====================================================================
 #
-#   This file maps the entities into hokohoko.entities.
+#   This script demonstrates Hokohoko running, by using the included
+#   Example predictor.
 #
 
-__all__ = [
-    "Account",
-    "Assessor",
-    "Bar",
-    "Config",
-    "Data",
-    "Direction",
-    "Order",
-    "Position",
-    "Predictor",
-    "Status"
-]
-
-from hokohoko.entities._Account import Account
-from hokohoko.entities._Assessor import Assessor
-from hokohoko.entities._Bar import Bar
-from hokohoko.entities._Config import Config
-from hokohoko.entities._Data import Data
-from hokohoko.entities._Direction import Direction
-from hokohoko.entities._Order import Order
-from hokohoko.entities._Position import Position
-from hokohoko.entities._Predictor import Predictor
-from hokohoko.entities._Status import Status
+PYTHONPATH=Hokohoko python Hokohoko/hokohoko/Example.py
