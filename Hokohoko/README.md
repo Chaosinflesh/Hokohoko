@@ -1,9 +1,9 @@
 # Hokohoko
 
 _Hokohoko means "to trade, barter, exchange, sell, buy, export, alternate" in
-Te Reo Maori._[1]
+Te Reo Māori._[1]
 
-Hokohoko aims to provide an consistent benchmark for academics and others who
+Hokohoko aims to provide a consistent benchmark for academics and others who
 wish to test the efficacy of their algorithms on FOREX speculation.
 
 It provides 7 years of per-minute market data across 50 currency pairs, and
