@@ -77,6 +77,13 @@ found in the associated paper [2]_ for more information.
 Bugs and issues can be reported `here <https://github.com/nc-bradley/Hokohoko/issues>`_.
 
 
+Installation
+============
+[TODO: PyPI]
+
+Hokohoko's source code can be found at `<https://github.com/nc-bradley/Hokohoko>`_.
+
+
 Overview
 ========
 
