@@ -33,7 +33,7 @@ from hokohoko.entities import Assessor
 class Logger(Assessor):
 
     def analyse(self, data: Iterable) -> None:
-        # TODO: Make this ouptut per-Order rather than total equity.
+        # TODO: Make this output per-Order rather than total equity.
         results = np.array([a.get()[1].equity[-1] for a in data], dtype=np.float64)
         for i, r in enumerate(results):
             print(f"{i:03d}:{r:12.2f}")
