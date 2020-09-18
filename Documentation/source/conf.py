@@ -16,10 +16,9 @@ import sys
 from pathlib import Path
 
 here = Path(os.path.abspath(__file__)).parent.parent.parent.absolute()
-sys.path.append(here.joinpath("Hokohoko", "hokohoko"))
-sys.path.append(here.joinpath("Assessors", "assessors"))
-sys.path.append(here.joinpath("Predictors", "predictors"))
-
+sys.path.append(str(here.joinpath("Hokohoko")))
+sys.path.append(str(here.joinpath("Assessors")))
+sys.path.append(str(here.joinpath("Predictors")))
 
 # -- Project information -----------------------------------------------------
 
