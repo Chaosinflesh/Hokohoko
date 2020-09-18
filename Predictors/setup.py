@@ -24,12 +24,17 @@
 #
 
 import datetime
+import os
 import setuptools
 
-with open("README.md", "r") as fh:
+from pathlib import Path
+
+here = Path(os.path.abspath(__file__)).parent.absolute()
+
+with open(here.joinpath("README.md"), "r", encoding="utf8") as fh:
 	long_description = fh.read()
 
-with open("VERSION", "r") as fv:
+with open(here.joinpath("VERSION"), "r", encoding="utf8") as fv:
 	version = fv.read().strip() + f"_{int(datetime.datetime.utcnow().timestamp())}"
 
 setuptools.setup(
