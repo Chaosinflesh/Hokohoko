@@ -269,7 +269,7 @@ API Reference
 LICENSE
 =======
 
-.. literalinclude:: ../../LICENSE
+.. literalinclude:: LICENSE
     :language: Text
 
 
