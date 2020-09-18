@@ -29,7 +29,7 @@ Hokohoko
 
 This is the base module for Hokohoko. Can be invoked either
 programmatically by passing an appropriately configured
-``hokohoko.Hokohoko.HokohokoConfig`` to ``hokohoko.Hokohoko.run()``, or
+``hokohoko.Hokohoko.Config`` to ``hokohoko.Hokohoko.run()``, or
 by invoking in a script:
 
 .. code-block :: Text

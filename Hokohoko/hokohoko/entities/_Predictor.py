@@ -56,7 +56,7 @@ class Predictor(Random):
         :type lock:         multiprocessing.Lock
 
         :param parameters:  The parameters passed in by
-                            ``HokohokoConfig.predictor_parameters``.
+                            ``hokohoko.Hokohoko.Config.predictor_parameters``.
                             Stored in ``self.parameters``.
         :type parameters:   str
 

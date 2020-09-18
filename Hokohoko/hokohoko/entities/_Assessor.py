@@ -54,9 +54,7 @@ class Assessor:
 
         :param data:        The data to analyse. This is provided as an
                             Account per Period.
-        :type data:         list[multiprocessing.pool.AsyncResult[
-                                tuple[int, hokohoko.entities.Account]
-                            ]]
+        :type data:         list[multiprocessing.pool.AsyncResult[tuple[int, hokohoko.entities.Account]]]
 
         .. include:: must_override.rst
 

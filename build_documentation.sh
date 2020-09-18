@@ -1,4 +1,4 @@
-#   run_example.sh
+#   build_documentation.sh
 #
 #   Copyright 2020 Neil Bradley, Bebecom NZ Limited
 #
@@ -19,8 +19,10 @@
 #
 #   ====================================================================
 #
-#   This script demonstrates Hokohoko running, by using the included
-#   Example predictor.
+#   This script builds the documentation for hokohoko.readthedocs.io.
+#
+#   The Sphinx source was originally auto-built, but is currently
+#   maintained manually.
 #
 
-PYTHONPATH=Hokohoko python Example.py
+".\Documentation\make.bat" html
