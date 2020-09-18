@@ -12,9 +12,13 @@
 #
 import os
 import sys
-sys.path.append(os.sep.join(["..", "..", "Hokohoko", "hokohoko"]))
-sys.path.append(os.sep.join(["..", "..", "Assessors", "assessors"]))
-sys.path.append(os.sep.join(["..", "..", "Predictors", "predictors"]))
+
+from pathlib import Path
+
+here = Path(os.path.abspath(__file__)).parent.parent.parent.absolute()
+sys.path.append(here.joinpath("Hokohoko", "hokohoko"))
+sys.path.append(here.joinpath("Assessors", "assessors"))
+sys.path.append(here.joinpath("Predictors", "predictors"))
 
 
 # -- Project information -----------------------------------------------------
@@ -66,5 +70,5 @@ html_theme = 'bizstyle'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-with open(os.sep.join(["..", "..", "Hokohoko", "VERSION"])) as o:
+with open(here.joinpath("Hokohoko", "VERSION")) as o:
     rst_epilog = f".. |version| replace:: {o.readline()}"
