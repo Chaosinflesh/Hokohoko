@@ -32,8 +32,7 @@ from hokohoko.entities._Position import Position
 
 class Account:
     """
-    Holds real-time information about the account during simulation and
-    benchmarking.
+    Holds real-time information about the account during benchmarking.
 
     """
 
@@ -75,7 +74,7 @@ class Account:
 
         **history**
 
-            The ``list[hokohoko.entities.History]`` that will be passed
+            The ``list[hokohoko.entities.Positions]`` that will be passed
             into the Assessors.
 
         **symbol_ids**
