@@ -1,5 +1,12 @@
 # Hokohoko Assessors
 
 This package contains implementations of various assessors for use with the 
-Hokohoko package.  These assessors are based on the 40+ different assessment
-methods used over the last 120 years, as identified by [Bradley et al].
+[Hokohoko](pypi.org/project/hokohoko) package.
+
+The documentation can be found at [hokohoko.readthedocs.org]().
+
+The source can be found at [github.com/nc-bradley/Hokohoko]().
+
+<hr>
+
+Copyright 2020 Neil Bradley, Bebecom NZ Limited.
