@@ -1,8 +1,8 @@
-#   assessors/__init__.py
+#   hokohoko/predictors/__init__.py
 #
 #   Copyright 2020 Neil Bradley, Bebecom NZ Limited
 #
-#   This file is part of Hokohoko-Assessors.
+#   This file is part of Hokohoko.
 #
 #   Hokohoko is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -19,10 +19,13 @@
 #
 #   ====================================================================
 #
-#   This file maps the assessors to hokohoko.assessors.
+#   This file maps the predictors to hokohoko.predictors.
 #
 
-name = "hokohoko.assessors"
+from hokohoko.standard import DoNothing
+
+name = "predictors"
 
 __all__ = [
+    "DoNothing"
 ]
