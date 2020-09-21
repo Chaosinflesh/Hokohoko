@@ -24,9 +24,7 @@
 
 from hokohoko.standard import Logger
 
-name = "assessors"
 
 __all__ = [
     "Logger"
 ]
-

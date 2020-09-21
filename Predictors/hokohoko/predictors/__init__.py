@@ -24,7 +24,6 @@
 
 from hokohoko.standard import DoNothing
 
-name = "predictors"
 
 __all__ = [
     "DoNothing"
