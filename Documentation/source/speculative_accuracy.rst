@@ -1,3 +1,5 @@
+.. speculative_accuracy:
+
 Accuracy: The Hokohoko Benchmark
 ================================
 

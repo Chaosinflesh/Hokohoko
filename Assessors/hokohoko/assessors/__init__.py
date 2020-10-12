@@ -1,6 +1,6 @@
 #   assessors/__init__.py
 #
-#   Copyright 2020 Neil Bradley, Bebecom NZ Limited
+#   Copyright 2020 Neil Bradley
 #
 #   This file is part of Hokohoko-Assessors.
 #
@@ -23,8 +23,11 @@
 #
 
 from hokohoko.standard import Logger
-
+from hokohoko.assessors._AccountHistory import AccountHistory
+from hokohoko.assessors._SpeculativeAccuracy import SpeculativeAccuracy
 
 __all__ = [
-    "Logger"
+    "AccountHistory",
+    "Logger",
+    "SpeculativeAccuracy"
 ]
