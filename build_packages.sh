@@ -22,9 +22,6 @@
 #   This script builds the packages for PyPI.
 #
 
-cd Assessors
-python setup.py bdist_wheel
-cd ../Hokohoko
-python setup.py bdist_wheel
-cd ../Predictors
-python setup.py bdist_wheel
+python Hokohoko/setup.py bdist_wheel
+python Assessors/setup.py bdist_wheel
+python Predictors/setup.py bdist_wheel

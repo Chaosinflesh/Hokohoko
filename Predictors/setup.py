@@ -46,6 +46,7 @@ setuptools.setup(
 	long_description=long_description,
 	long_description_content_type="text/markdown",
 	url="https://github.com/nc-bradley/Hokohoko",
+	package_dir={"": "Predictors"},
 	packages=["hokohoko.predictors"],
 	classifiers=[
 		"Programming Language :: Python :: 3",
