@@ -1,6 +1,6 @@
 #   hokohoko/entities/_Config.py
 #
-#   Copyright 2020 Neil Bradley, Bebecom NZ Limited
+#   Copyright 2020 Neil Bradley
 #
 #   This file is part of Hokohoko.
 #

@@ -5,5 +5,5 @@ Modules
    :maxdepth: 4
 
    hokohoko
-   hokohoko.predictors
    hokohoko.assessors
+   hokohoko.predictors

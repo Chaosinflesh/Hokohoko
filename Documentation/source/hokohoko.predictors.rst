@@ -12,4 +12,15 @@ These are found in the ``hokohoko_predictors`` package.
 
 .. toctree::
 
+    hokohoko.predictors.Bachelier1900
+    hokohoko.predictors.Bollerslev1986
+    hokohoko.predictors.Bollinger
+    hokohoko.predictors.BoxJenkins1970
+    hokohoko.predictors.BoxJenkins1976
+    hokohoko.predictors.Engel1982
+    hokohoko.predictors.Random
+    hokohoko.predictors.RandomWalk
+    hokohoko.predictors.Static
+    hokohoko.predictors.YaoTan2000
+    hokohoko.predictors.Yule1927
     hokohoko.standard.DoNothing

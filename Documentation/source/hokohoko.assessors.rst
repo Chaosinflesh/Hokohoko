@@ -7,4 +7,6 @@ the Hokohoko-specific Assessor, **Speculative Accuracy**, but also includes a se
 
 .. toctree::
 
+    hokohoko.assessors.AccountHistory
+    hokohoko.assessors.SpeculativeAccuracy
     hokohoko.standard.Logger

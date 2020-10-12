@@ -23,7 +23,7 @@ sys.path.append(str(here.joinpath("Predictors")))
 # -- Project information -----------------------------------------------------
 
 project = 'Hokohoko'
-copyright = '2020 Neil Bradley, Bebecom NZ Limited'
+copyright = '2020 Neil Bradley'
 author = 'Neil Bradley'
 
 
