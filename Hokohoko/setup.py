@@ -46,6 +46,7 @@ setuptools.setup(
 	long_description=long_description,
 	long_description_content_type="text/markdown",
 	url="https://github.com/nc-bradley/Hokohoko",
+	package_dir={"": "Hokohoko"},
 	packages=["hokohoko", "hokohoko.entities", "hokohoko.standard"],
 	classifiers=[
 		"Programming Language :: Python :: 3",
