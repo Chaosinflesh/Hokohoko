@@ -46,7 +46,7 @@ setuptools.setup(
 	long_description=long_description,
 	long_description_content_type="text/markdown",
 	url="https://github.com/nc-bradley/Hokohoko",
-	packages=["hokohoko"],
+	packages=["hokohoko", "hokohoko.entities", "hokohoko.standard"],
 	classifiers=[
 		"Programming Language :: Python :: 3",
 		"License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
