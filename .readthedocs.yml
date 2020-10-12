@@ -15,3 +15,7 @@ python:
     - requirements: Documentation/requirements.txt
     - method: setuptools
       path: Hokohoko
+    - method: setuptools
+      path: Assessors
+    - method: setuptools
+      path: Predictors
