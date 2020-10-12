@@ -13,5 +13,5 @@ python:
   version: 3.7
   install:
     - requirements: Documentation/requirements.txt
-    - path: Hokohoko
-      method: setuptools
+    - method: setuptools
+      path: Hokohoko
