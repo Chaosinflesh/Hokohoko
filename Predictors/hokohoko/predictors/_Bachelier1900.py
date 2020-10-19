@@ -131,7 +131,7 @@ class Bachelier1900(Predictor):
     .. math::
 
         \\begin{equation}
-        \\Delta x = x_{t+1} - x_t
+        \\delta x = x_{t+1} - x_t
         \\end{equation}
 
     generate two probabilities:

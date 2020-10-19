@@ -23,7 +23,7 @@
 #   running balance and equity totals.
 #
 
-from typing import Iterable
+from typing import Iterable, Optional
 
 import numpy as np
 
@@ -31,8 +31,23 @@ from hokohoko.entities import Assessor
 
 
 class Logger(Assessor):
+    """
+    Outputs results into a CSV format.
+    """
+
+    def __init__(self, parameters: Optional[str] = None) -> None:
+        """
+        """
+        super().__init__(None)
 
     def analyse(self, data: Iterable) -> None:
+        """
+        Output the benchmark results into a readable form.
+
+        :param data:        The data to analyse. This is provided as an
+                            Account per Period.
+        :type data:         list[multiprocessing.pool.AsyncResult[tuple[int, hokohoko.entities.Account]]]
+        """
         # TODO: Make this output per-Order rather than total equity.
         results = np.array([a.get()[1].equity[-1] for a in data], dtype=np.float64)
         for i, r in enumerate(results):

@@ -33,7 +33,9 @@ from hokohoko.entities._Status import Status
 
 class Position:
     """
-    A Position is an Order that has been activated.
+    A Position is an Order that has been activated. It includes all the
+    relevant information for assessing the effectiveness of the Order,
+    for parsing with an Assessor.
 
     """
 
@@ -51,18 +53,45 @@ class Position:
             final_value: Union[float, np.float64]
     ):
         """
-        TODO: Describe these!
+        :param order:   The Order linked to this Position. Note: the Order may
+                        not have been activated, but will still be listed.
+        :type order:    hokohoko.entities.Order
 
-        :param order:
-        :param future:
-        :param status:
-        :param open_time:
-        :param close_time:
-        :param open_rate:
-        :param close_rate:
-        :param held_value:
-        :param initial_value:
-        :param final_value:
+        :param future:  The future Bar this Order was active during.
+        :type future:   hokohoko.entities.Bar
+
+        :param status:  The closing Status of the Order.
+        :type status:   hokohoko.entities.Status.
+
+        :param open_time:   The UTC timestamp when the Order was opened, if
+                            applicable.
+        :type open_time:    numpy.int64
+
+        :param close_time:  The UTC timestamp when the Order was closed, if
+                            applicable.
+        :type close_time:   numpy.int64
+
+        :param open_rate:   The rate at which the Order opened. This may differ
+                            from the requested rate, due to slippage.
+        :type open_rate:    numpy.float32
+
+        :param close_rate:  The rate at which the Order closed. This may differ
+                            from the requested rate, due to slippage.
+        :type close_rate:   numpy.float32
+
+        :param held_value:  An internal value used to calculate
+                            minute-by-minute Equity during benchmarking.
+        :type held_value:   numpy.float64
+
+        :param initial_value:   An internal value used to calculate Balance
+                                changes. This is the initial Equity for the
+                                Position.
+        :type initial_value:    numpy.float64
+
+        :param final_value:     An internal value used to calculate Balance
+                                changes. This is the final Equity for the
+                                Postion.
+        :type final_value:      numpy.float64
         """
         self.order = order
         self.future = future

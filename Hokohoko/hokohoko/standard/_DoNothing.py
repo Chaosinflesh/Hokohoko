@@ -22,7 +22,9 @@
 #   This is a dummy predictor, which makes no predictions.
 #
 
-from typing import Iterable
+from typing import Iterable, Optional
+
+import multiprocessing as mp
 
 from hokohoko.entities import Bar, Predictor
 
@@ -33,17 +35,57 @@ class DoNothing(Predictor):
     generate a lot of DONT_BUY, DONT_SELL Orders.
     """
 
+    def __init__(
+            self,
+            lock: mp.Lock,
+            parameters: Optional[str] = None
+    ) -> None:
+        """
+        :param lock:        A single lock shared by all Predictors in
+                            each Period for this invocation. Stored in
+                            ``self.lock``.
+        :type lock:         multiprocessing.Lock
+
+        :param parameters:  The parameters passed in from
+                            ``hokohoko.entities.Config``.
+                            Stored in ``self.parameters``.
+        :type parameters:   str
+        """
+        super().__init__(lock, parameters)
+
     def __enter__(self) -> Predictor:
+        """
+        Does nothing.
+        """
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
+        """
+        Does nothing.
+        """
         pass
 
     def on_start(self, bars: Iterable[Bar]) -> None:
+        """
+        Does nothing.
+
+        :param bars: The list of opening values for the Period.
+        :type bars:  list[hokohoko.entities.Bar]
+        """
         pass
 
     def on_bar(self, bars: Iterable[Bar]) -> None:
+        """
+        Does nothing, which is the same as declaring DONT_BUY, DONT_SELL on
+        every Symbol.
+
+        :param bars: A list containing the just-closed Bar for each Symbol.
+        :type bars:  list[hokohoko.entities.Bar]
+        """
         pass
 
     def on_stop(self) -> None:
+        """
+        Does nothing.
+        """
         pass

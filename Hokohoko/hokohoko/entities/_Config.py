@@ -76,3 +76,6 @@ class Config(NamedTuple):
 
     #: Enable profiling output in the current directory.
     profiling: bool = defaults.DEFAULT_PROFILING
+
+    #: The desired level of debug output.
+    verbosity: int = defaults.DEFAULT_VERBOSITY

@@ -8,7 +8,7 @@ make use of Hokohoko to benchmark their work.
 
 Where possible, a predictor or indicator is linked with its original author/proponent.
 
-These are found in the ``hokohoko_predictors`` package.
+These are found in the ``hokohoko-predictors`` package.
 
 .. toctree::
 
