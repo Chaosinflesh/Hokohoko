@@ -33,6 +33,9 @@ from hokohoko.entities import Data
 
 
 class Npz(Data):
+    """
+    Loads the data from a numpy.npz file.
+    """
 
     def __init__(
             self,

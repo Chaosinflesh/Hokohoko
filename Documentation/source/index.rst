@@ -46,7 +46,7 @@ application of machine learning to foreign exchange prediction. There are two ma
    because of the influential work of Yao & Tan (2000) [3]_. Prior to their work, the standard to beat was
    **Buy-and-Hold** (a correlation of the **Efficient Market Hypothesis (EMH)** and its corollary, the **Random Walk**
    of the markets), with nearly all research showing ANNs significantly inferior to Buy-and-Hold for foreign exchange
-   prediction. However, Yao & Tan claimed their ANN actually beat an **ARIMA** predictor with perfect foresight - a
+   prediction. However, Yao & Tan claimed their ANN actually beat an **ARIMA** predictor with perfect foresight---a
    predictor that had never been proven to beat B&H itself. Despite this, and claiming
 
       *'Now that ANNs beat Buy-and-Hold ... [we are justified not to test against it]'*
@@ -79,7 +79,10 @@ Bugs and issues can be reported `here <https://github.com/nc-bradley/Hokohoko/is
 
 Installation
 ============
-[TODO: PyPI]
+The base Hokohoko package can be found on PyPI, `<https://pypi.org/project/hokohoko/>`_.
+
+[TODO] Additional Predictors and Assessors can be found in the packages, `<https://pypi.org/project/hokohoko-assessors/>`_ and
+`<https://pypi.org/project/hokohoko-predictors/>`_.
 
 Hokohoko's source code can be found at `<https://github.com/nc-bradley/Hokohoko>`_.
 
@@ -108,7 +111,7 @@ trigger both its ``take_profit`` and ``stop_loss`` in the same minute, the ``tak
 Additionally, Hokohoko
 keeps track of the Account **Balance** and **Equity**, updating each as often as required. Importantly,
 Orders and Positions are only evaluated within the Test portion of the Period, however the Predictor is not made aware
-of when this is - so it should always make a prediction.
+of when this is---so it should always make a prediction.
 
 
 How to use
@@ -120,8 +123,7 @@ algorithms in. It can be invoked either through the commandline::
    # This uses the default settings, but changes predictor and gives it some options.
    # See Configuration Options or try --help for more information about the options.
 
-   python3 -m hokohoko.Hokohoko -P hokohoko.predictors.SameAsLast \
-       "--direction OFFSET_SAME --tp_ratio 1.0 --sl_ratio 0.01"
+   python3 -m hokohoko.Hokohoko -P "hokohoko.standard.DoNothing" -A "hokohoko.standard.Logger" -D "hokohoko.standard.Npz data.npz"
 
 or imported into a pre-existing project (see the included Example.py).
 
@@ -142,10 +144,7 @@ via instantiation (such as in ``Example.py``) or command line options (if runnin
 
 .. code-block:: Text
 
-    --simulate
-                    Runs in simulate mode instead of benchmark.
-
-    -P, --predictor PREDICTOR "PARAMETERS"
+    -P, --predictor "PREDICTOR PARAMETERS"
 
         PREDICTOR   The fully qualified name of the predictor to use.
                     Defaults to `hokohoko.standard.DoNothing`.
@@ -154,7 +153,7 @@ via instantiation (such as in ``Example.py``) or command line options (if runnin
                     Defaults to `None`.
 
 
-    -A, --assessor ASSESSOR "PARAMETERS"
+    -A, --assessor "ASSESSOR PARAMETERS"
 
         ASSESSOR    The fully qualified name of the assessor to use.
                     Defaults to `hokohoko.standard.Logger`.
@@ -162,7 +161,7 @@ via instantiation (such as in ``Example.py``) or command line options (if runnin
         PARAMETERS  The parameters to pass to the assessor.
                     Defaults to `None`.
 
-    -D, --data DATA_SOURCE PARAMETERS
+    -D, --data "DATA_SOURCE PARAMETERS"
 
         DATA_SOURCE The fully qualified name of the data source to use.
                     Defaults to `hokohoko.standard.Npz`.
@@ -234,6 +233,10 @@ via instantiation (such as in ``Example.py``) or command line options (if runnin
                         the current directory.
                         Defaults to False.
 
+    --verbosity
+                        Defines a level of debug output.
+                        Defaults to 0.
+
 
 Limitations
 ===========
@@ -242,7 +245,7 @@ Limitations
   file load. Default settings of 8 concurrent processes therefore requires about 9.6GB of RAM, not including the RAM
   required by each predictor. RAM usage is reduced for subsets.
 * Hokohoko has been successfully tested using Python 3.6, 3.7 and 3.8 on Windows 10, Debian and Ubuntu.
-* The base ``hokohoko`` package requires ``numpy`` only. The additional packages ``hokohoko_assessors`` and ``hokohoko_predictors`` may have
+* The base ``hokohoko`` package requires ``numpy`` only. The additional packages ``hokohoko-assessors`` and ``hokohoko-predictors`` may have
   additional requirements, such as ``scipy``.
 * Hokohoko is intended to be cross-platform. It therefore configures Python to use 'spawn' for each period
   benchmarked/simulated.
@@ -281,7 +284,7 @@ Glossary
 
     Random Walk
         In the event of an efficient market, it is theorised (and for the most part observed) that the behaviour of
-        asset prices in the market follow a random walk - that is that there is no correlation between past and future
+        asset prices in the market follow a random walk---that is that there is no correlation between past and future
         behaviour.
 
     Efficient Market Hypothesis
@@ -297,7 +300,7 @@ Glossary
 
     Period
         An individual benchmark/simulation unit. Hokohoko's default data file provides enough data to run 11 Periods before
-        they before overlapping. Periods are intended to be self-contained - whilst Predictors may access external data,
+        they before overlapping. Periods are intended to be self-contained---whilst Predictors may access external data,
         they should not share anything out, or risk invalidating the results.
 
     Training

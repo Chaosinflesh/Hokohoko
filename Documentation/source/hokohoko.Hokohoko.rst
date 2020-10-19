@@ -1,3 +1,3 @@
 .. automodule:: hokohoko.Hokohoko
     :members:
-    :exclude-members: Account, ArgumentParser, datetime, default_timer, NamedTuple, Period, PeriodConfig, assessors, predictors
+    :exclude-members: Account, ArgumentParser, Config, datetime, default_timer, Iterable, List, NamedTuple, Period, PeriodConfig, Tuple, assessors, predictors

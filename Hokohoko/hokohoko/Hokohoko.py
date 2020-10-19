@@ -29,7 +29,7 @@ Hokohoko
 
 This is the base module for Hokohoko. Can be invoked either
 programmatically by passing an appropriately configured
-``hokohoko.Hokohoko.Config`` to ``hokohoko.Hokohoko.run()``, or
+``hokohoko.entities.Config`` to ``hokohoko.Hokohoko.run()``, or
 by invoking in a script:
 
 .. code-block :: Text
@@ -163,6 +163,12 @@ def _make_config_from_arguments() -> Config:
         help="Enable profiling out (files will be called 'profile_[period_id]')",
         action='store_true'
     )
+    parser.add_argument(
+        "--verbosity",
+        help="Set a level of verbosity.",
+        type=int,
+        default=0
+    )
 
     args = parser.parse_args()
 
@@ -179,7 +185,8 @@ def _make_config_from_arguments() -> Config:
         load_limit=args.load_limit,
         training_minutes=args.training_minutes,
         test_minutes=args.test_minutes,
-        profiling=args.profiling
+        profiling=args.profiling,
+        verbosity=args.verbosity
     )
 
 
@@ -284,13 +291,13 @@ def run(config: Config) -> None:
     Runs the Hokohoko benchmark suite based on the provided config.
 
     :param config:  The global configuration options.
-    :type config:   hokohoko.Hokohoko.HokohokoConfig
+    :type config:   hokohoko.entities.Config
     """
     # 0. Housekeeping.
     if mp.get_start_method(True) is None:
         mp.set_start_method('spawn')
 
-    if __debug__:
+    if config.verbosity > 0:
         print(config)
     start_time = default_timer()
     assessors = []

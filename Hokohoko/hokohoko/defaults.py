@@ -35,3 +35,4 @@ DEFAULT_LOAD_LIMIT = None  #: Load the full data set (no restriction).
 DEFAULT_TRAINING_MINUTES = 10080 * 26 * 3  #: 18 months of weeks.
 DEFAULT_TEST_MINUTES = 10080 * 26  #: 6 months of weeks.
 DEFAULT_PROFILING = False  #: Don't enable Python's profiler.
+DEFAULT_VERBOSITY = 0   #: No debug output.
